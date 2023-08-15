@@ -1,0 +1,11 @@
+<h1>All Tasks</h1>
+
+
+  <% @tasks.each do |task| %>
+    <% if task.completed == true %>
+    <div> ✅ <%= link_to task.title, task_path(task.id), class:"link"%> </div>
+
+    <% else %>
+    <div> 🟥 <%= link_to task.title, task_path(task.id), class:"link"%> </div>
+    <% end %>
+  <% end %>
